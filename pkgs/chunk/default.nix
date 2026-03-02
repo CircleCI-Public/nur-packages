@@ -9,22 +9,22 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    x86_64-linux = "1vvl2php4ig34fbp54ndn2ddk0x9fx37fdrlcii5d2ggkmvn7i5g";
-    aarch64-linux = "19m2jp2nqqrbry3hyb8n84q288mngs6yb00lxlfnqfkzgy4l60n3";
-    x86_64-darwin = "1dagby4kr39dvb1y3ks2hzswg3ak3jwi9hc0njwcqkwfrnykp0kz";
-    aarch64-darwin = "141rapjzj50d83p0vknnhilcijssfaybxbckd91vfx2n728zfn9w";
+    x86_64-linux = "0mb09ifsnsdfwach8qzc5gvc95sm8hsq30v37pkbn2yna10gd877";
+    aarch64-linux = "1sgpz8da921hnippfqr2j24pndg8qhw3vvbpnjyxcgvz37vvpvfw";
+    x86_64-darwin = "02a3r19s7vv8jdg4zmbkx6027jdhy64sqjczzqqvck4pxg8r01wd";
+    aarch64-darwin = "0fh6wpdbghwg4q9yqd1xlb6lvxdswxigfihv3hqy146mf4kp4d09";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/CircleCI-Public/chunk-cli/releases/download//chunk-cli_Linux_x86_64.tar.gz";
-    aarch64-linux = "https://github.com/CircleCI-Public/chunk-cli/releases/download//chunk-cli_Linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/CircleCI-Public/chunk-cli/releases/download//chunk-cli_Darwin_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/CircleCI-Public/chunk-cli/releases/download//chunk-cli_Darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/CircleCI-Public/chunk-cli/releases/download/v0.0.20/chunk-cli_Linux_x86_64.tar.gz";
+    aarch64-linux = "https://github.com/CircleCI-Public/chunk-cli/releases/download/v0.0.20/chunk-cli_Linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/CircleCI-Public/chunk-cli/releases/download/v0.0.20/chunk-cli_Darwin_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/CircleCI-Public/chunk-cli/releases/download/v0.0.20/chunk-cli_Darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "chunk";
-  version = "";
+  version = "0.0.20";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
